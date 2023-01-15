@@ -3,16 +3,16 @@ import css from './Searchbar.module.css';
 
 export class Searchbar extends Component {
   state = {
-    searchValue: '',
+    value: '',
   };
 
   inputChange = event => {
-    this.setState({ searchValue: event.target.value });
+    this.setState({ value: event.target.value });
   };
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.onSubmit(this.state.searchValue);
+    this.props.onSubmit(this.state.value);
     event.target.reset();
   };
 
@@ -31,6 +31,7 @@ export class Searchbar extends Component {
             autoComplete="off"
             autoFocus
             placeholder="Search images and photos"
+            value={this.state.value}
           />
         </form>
       </header>
