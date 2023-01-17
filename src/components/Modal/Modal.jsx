@@ -33,3 +33,11 @@ export class Modal extends Component {
     );
   }
 }
+
+Modal.propTypes = {
+  onImageClick: PropTypes.func.isRequired,
+  largeImgUrl: PropTypes.shape({
+    largeImgUrl: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
+  }).isRequired,
+};
